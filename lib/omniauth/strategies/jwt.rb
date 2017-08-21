@@ -19,6 +19,7 @@ module OmniAuth
       option :valid_within, nil
       
       def request_phase
+        return fail! if @env['omniauth.error']
         redirect options.auth_url
       end
       
@@ -33,6 +34,7 @@ module OmniAuth
       end
       
       def callback_phase
+        return fail! if @env['omniauth.error']
         super
       rescue ClaimInvalid => e
         fail! :claim_invalid, e
