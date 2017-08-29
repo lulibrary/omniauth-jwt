@@ -1,5 +1,6 @@
 $:.unshift File.dirname(__FILE__) + "/../lib"
 require 'rack/test'
+require 'multi_json'
 
 require 'omniauth/jwt'
 OmniAuth.config.logger = Logger.new('/dev/null')
@@ -10,7 +11,6 @@ OmniAuth.config.logger = Logger.new('/dev/null')
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
   

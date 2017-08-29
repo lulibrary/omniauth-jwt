@@ -6,8 +6,8 @@ require 'omniauth/jwt/version'
 Gem::Specification.new do |spec|
   spec.name          = "omniauth-jwt"
   spec.version       = Omniauth::JWT::VERSION
-  spec.authors       = ["Michael Bleigh"]
-  spec.email         = ["mbleigh@mbleigh.com"]
+  spec.authors       = ["Michael Bleigh", "Stephen Robinson"]
+  spec.email         = ["mbleigh@mbleigh.com", "library.dit@lancaster.ac.uk"]
   spec.description   = %q{An OmniAuth strategy to accept JWT-based single sign-on.}
   spec.summary       = %q{An OmniAuth strategy to accept JWT-based single sign-on.}
   spec.homepage      = "http://github.com/mbleigh/omniauth-jwt"
@@ -24,7 +24,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "rack-test"
+
+  spec.add_development_dependency "multi_json"
   
-  spec.add_dependency "jwt"
-  spec.add_dependency "omniauth", "~> 1.1"
+  spec.add_dependency "jwt", "~> 1.5.6"
+  spec.add_dependency "omniauth", "~> 1.6.1"
 end
